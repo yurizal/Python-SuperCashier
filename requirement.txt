@@ -1,0 +1,6 @@
+commonmark==0.9.1
+prettytable==3.5.0
+Pygments==2.14.0
+rich==13.0.1
+termcolor==2.2.0
+wcwidth==0.2.5
