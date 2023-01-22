@@ -77,16 +77,12 @@ class Transaksi():
         self.data_item = Transaksi.data_item
         self.data_order = Transaksi.data_order
         self.data_header_order = Transaksi.data_header_order
-        list_diskon =[]
         dict3 = defaultdict(list)
+        total_diskon = 0
         for k, v in chain(self.data_item.items(), self.data_order.items()):
             dict3[k].append(v)
-
-        # print(dict3['CITATO'][2])
         for index,key in enumerate(self.data_header_order.items()):
-            if index == 0 :
-                continue
-            else:
+            if index != 0 :
                 self.table_data_order.add_column(f"{key[0]}", style=f"{key[1]}")
 
         for key,value in enumerate(dict3.items()):
@@ -94,19 +90,20 @@ class Transaksi():
                 harga = int(value[1][0])
                 jumlah = int(value[1][1])
                 total = harga * jumlah
-                diskon = [total-(total*0.1),'10%'] if total > 500000 else [total-(total*0.08),'8%'] if total > 300000 else [total-(total*0.05),'5%'] if total > 200000 else [total,'0']
-                self.table_data_order.add_row(f"{value[0]}",f"Rp {value[1][0]}",f"{value[1][1]}",f"Rp {int(diskon[0])}")
-                print(key)
-                if diskon[1] != '0':
-                    list_diskon.append(f"item {value[0]} mendapatkan diskon {diskon[1]} dari Rp {total} menjadi Rp {int(diskon[0])}")
+                self.table_data_order.add_row(f"{value[0]}",f"Rp {value[1][0]}",f"{value[1][1]}",f"Rp {total}")
+                total_diskon += total
 
             except:
                 continue
 
         console1 = Console()
         console1.print(self.table_data_order)
-        for i in list_diskon:
-            print(i)
+
+        diskon = [total_diskon-(total_diskon*0.1),'10%'] if total_diskon > 500000 else [total_diskon-(total_diskon*0.08),'8%'] if total_diskon > 300000 else [total_diskon-(total_diskon*0.05),'5%'] if total_diskon > 200000 else [total_diskon,'0']
+        if diskon[1] != '0':
+            print(f"Anda mendapatkan diskon sebesar {diskon[1]} dari Rp {int(total_diskon)} sehingga yang dibayarkan adalah {Color.BOLD}Rp {int(diskon[0])}{Color.END}")
+        else:
+            print(f"Total Jumlah yang dibayarkan adalah {Color.BOLD}Rp {diskon[0]}{Color.END}")
 
     """
     def add_item function/method yang digunakan untuk menambah item dimana saat penambahan item harus sesuai dengan table/data yang disedikan oleh AndyMart
