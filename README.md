@@ -11,14 +11,14 @@ Python Super Cashier adalah program sederhana self service yang menggunakan pyth
 ![image](https://user-images.githubusercontent.com/16360023/213995402-864c3bae-e184-4f31-bc97-3393ef474204.png)
 
 ## Instalasi Program
-- Buat folder dan environemt terlebih dahulu
+- Buat folder dan environment terlebih dahulu
     ```
     mkdir <folder>
     cd <folder>
     copy program ke dalam folder
     python3 -m venv env
     ```
-- Aktifkan environmnet
+- Aktifkan environment
     ```
     source ./env/bin/activate
     ```
