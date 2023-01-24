@@ -222,6 +222,7 @@ class Transaksi():
     def check_item(self):
         self.table()
         print(f"- Untuk memilih dan menambah item silahkan ketik nama item\n- Untuk update jumlah item silahkan ketik ulang nama item\n- Untuk kembali ke menu silahkan ketik {Color.RED}BACK{Color.END} sebelum memilih item")
+        print(f"{Color.BOLD}{Color.GREEN}Diskon 10% jika total belanja diatas Rp 500.000\nDiskon 8%% jika total belanja diatas Rp 300.000\nDiskon 5% jika total belanja diatas Rp 200.000{Color.END}")
         while True:
             tambahItem = input(f"{Color.BOLD}Pilih item : {Color.END}").upper()
             print(self.add_item(tambahItem))
