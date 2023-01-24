@@ -10,7 +10,7 @@ Python Super Cashier adalah program sederhana self service yang menggunakan pyth
 - Pelanggan yang telah memesan atau akan membayar diatas ketentuan akan mendapatkan diskon
  
 ## FlowChart
-![Flowchart-Tugas_Pacmaan_Python drawio(1)](https://user-images.githubusercontent.com/16360023/214218843-443bbd28-46e9-4332-811a-288c0f6c8138.png)
+![Flowchart-Tugas_Pacmaan_Python drawio(2)](https://user-images.githubusercontent.com/16360023/214219826-22bfb018-91be-451b-8f24-faeb19b453b1.png)
 
 ## Instalasi Program
 - Buat folder dan environment terlebih dahulu
