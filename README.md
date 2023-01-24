@@ -82,4 +82,4 @@ Python Super Cashier adalah program sederhana self service yang menggunakan pyth
 
 ## Perbaikan kedepan
 - ```Perbaikan clean code```
-- ```Implementasi arsitektur MVC```
+- ```Implementasi metode MVC```
