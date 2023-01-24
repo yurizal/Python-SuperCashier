@@ -16,6 +16,8 @@ Python Super Cashier adalah program sederhana self service yang menggunakan pyth
  | Function | Deskripsi |
  | -------- | --------- |
  | ```def __init__``` | Pertama kali program dijalankan dan penginputan nama |
+ | ```def table(self)``` | Untuk menampilkan data atau item yang ada |
+ | ```def table_order(self)``` | Untuk menampilkan data atau item yang telah diinputkan oleh pelanggan  |
  | ```def opsi(self)``` | Menu awal terdiri dari checkitem, checkorder dan exit |
  | ```def check_item(self)``` | View item dari function table dan input item  |
  | ```def add_item(self,tambah_item)``` | Input Item dan kembali ke menu |
@@ -23,8 +25,7 @@ Python Super Cashier adalah program sederhana self service yang menggunakan pyth
  | ```def delete_item(self,nama_item)``` | Delete item yang telah diinputkan |
  | ```def reset_transaction(self)``` | Delete semua item yang telah diinputkan |
  | ```def check_order(self)``` | Untuk mengecek sudah input item atau tidak. Dan opsi untuk delete item |
- | ```def table(self)``` | Untuk menampilkan data atau item yang ada |
- | ```def check_order(self)``` | Untuk menampilkan data atau item yang telah diinputkan oleh pelanggan  |
+
 ## Running Program
 - Buat folder dan environment terlebih dahulu
     ```
