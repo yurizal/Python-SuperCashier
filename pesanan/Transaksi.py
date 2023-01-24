@@ -196,7 +196,7 @@ class Transaksi():
                     # while True:
                     if selesai == "Y":
                         print(f"Silahkan membayar item anda\nTerima kasih sudah berkunjung ke AndyMart saudara/i {self.nama.upper()} \n")
-                        quit()
+                        exit()
                     else:
                         continue
                 elif pilih == "2":
@@ -249,6 +249,6 @@ class Transaksi():
                 self.check_order()
             elif pilihan == "3":
                 print(f"Terima Kasih Telah datang {self.nama.upper()}, Selamat Datang Kembali")
-                quit()
+                exit()
             else:
                 print("Tidak ada opsi tersebut, silahkan pilih kembali!!!")
