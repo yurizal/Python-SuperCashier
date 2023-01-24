@@ -79,18 +79,20 @@ class Transaksi():
         self.data_header_order = Transaksi.data_header_order
         dict3 = defaultdict(list)
         total_diskon = 0
+
         for k, v in chain(self.data_item.items(), self.data_order.items()):
             dict3[k].append(v)
+
         for index,key in enumerate(self.data_header_order.items()):
             if index != 0 :
                 self.table_data_order.add_column(f"{key[0]}", style=f"{key[1]}")
 
-        for key,value in enumerate(dict3.items()):
+        for key,value in dict3.items():
             try:
-                harga = int(value[1][0])
-                jumlah = int(value[1][1])
+                harga = int(value[0])
+                jumlah = int(value[1])
                 total = harga * jumlah
-                self.table_data_order.add_row(f"{value[0]}",f"Rp {value[1][0]}",f"{value[1][1]}",f"Rp {total}")
+                self.table_data_order.add_row(f"{key}",f"Rp {harga}",f"{jumlah}",f"Rp {total}")
                 total_diskon += total
 
             except:
@@ -101,20 +103,20 @@ class Transaksi():
 
         diskon = [total_diskon-(total_diskon*0.1),'10%'] if total_diskon > 500000 else [total_diskon-(total_diskon*0.08),'8%'] if total_diskon > 300000 else [total_diskon-(total_diskon*0.05),'5%'] if total_diskon > 200000 else [total_diskon,'0']
         if diskon[1] != '0':
-            print(f"Anda mendapatkan diskon sebesar {diskon[1]} dari Rp {int(total_diskon)} sehingga yang dibayarkan adalah {Color.BOLD}Rp {int(diskon[0])}{Color.END}")
+            print(f"Anda mendapatkan diskon sebesar {diskon[1]} dari Rp {int(total_diskon)} sehingga yang dibayar adalah {Color.BOLD}Rp {int(diskon[0])}{Color.END}")
         else:
-            print(f"Total Jumlah yang dibayarkan adalah {Color.BOLD}Rp {diskon[0]}{Color.END}")
+            print(f"Total Jumlah yang dibayar adalah {Color.BOLD}Rp {diskon[0]}{Color.END}")
 
     """
     def add_item function/method yang digunakan untuk menambah item dimana saat penambahan item harus sesuai dengan table/data yang disedikan oleh AndyMart
     Jika yang diinputkan tidak sama dengan data table, maka keluar alert atau tidak bisa diinputkan. Jika sesuai maka akan lanjut untuk input jumlah item
     Dan jika mengetikkan BACK maka akan kembali ke menu awal
     """
-    def add_item(self,tambahItem):
-        if tambahItem in Transaksi.data_item:
-            self.update_item_qty(tambahItem)
+    def add_item(self,tambah_item):
+        if tambah_item in Transaksi.data_item:
+            self.update_item_qty(tambah_item)
 
-        elif tambahItem == "BACK":
+        elif tambah_item == "BACK":
             return self.opsi()
         else:
             return f"{Color.DARKCYAN}Tidak ada item yang anda masukkan, silahkan cek item dan pesan kembali{Color.END}"
@@ -162,7 +164,7 @@ class Transaksi():
     reset_transaction untuk menghapus semua item sekaligus.
     """
     def reset_transaction(self):
-        rst = input("Anda yakin mau menghapus semua item yang sudah diinputkan (Yes=y, No=press any key)").upper()
+        rst = input("Anda yakin mau menghapus semua item yang sudah diinputkan (Yes=y, No=press any key)? ").upper()
         if rst == "Y":
             print("Semua Item sudah dihapus semua.")
             Transaksi.data_order.clear()
@@ -223,6 +225,7 @@ class Transaksi():
         self.table()
         print(f"- Untuk memilih dan menambah item silahkan ketik nama item\n- Untuk update jumlah item silahkan ketik ulang nama item\n- Untuk kembali ke menu silahkan ketik {Color.RED}BACK{Color.END} sebelum memilih item")
         print(f"{Color.BOLD}{Color.GREEN}Diskon 10% jika total belanja diatas Rp 500.000\nDiskon 8%% jika total belanja diatas Rp 300.000\nDiskon 5% jika total belanja diatas Rp 200.000{Color.END}")
+
         while True:
             tambahItem = input(f"{Color.BOLD}Pilih item : {Color.END}").upper()
             print(self.add_item(tambahItem))
