@@ -4,7 +4,9 @@ Python Super Cashier adalah program sederhana self service yang menggunakan pyth
 
 ## Deskripsi App
 - Terdapat table untuk menampilkan item-item apa saja yang bisa dipesan
-- Item dapat diupdate dan didelete baik secara per item atau hapus sekaligus
+- Pelanggan bisa menambahkan item dan juga jumlah per item
+- Jumlah Item dapat diupdate
+- Pelanggan bisa menghapus per item atau hapus sekaligus
 - Pelanggan yang telah memesan atau akan membayar diatas ketentuan akan mendapatkan diskon
  
 ## FlowChart
@@ -51,9 +53,13 @@ Python Super Cashier adalah program sederhana self service yang menggunakan pyth
 
 ![image](https://user-images.githubusercontent.com/16360023/213994475-0df10c14-1830-4385-8f83-aed26bbc6d5e.png)
 
+- _Informasi Diskon_
+
+![image](https://user-images.githubusercontent.com/16360023/214215382-1ad3802c-bd4e-4e6f-8f8c-aba5f154f848.png)
+
 - _Tambah Item_
 
-![image](https://user-images.githubusercontent.com/16360023/213994574-56cf1231-4608-47f3-9695-73ddf007741f.png)
+![image](https://user-images.githubusercontent.com/16360023/214215647-5727e88f-1245-438f-801c-acfa842f0d92.png)
 
 - _Jika salah memasukkan nama item_
 
