@@ -2,7 +2,7 @@
 
 Python Super Cashier adalah program sederhana self service yang menggunakan python agar pelanggan bisa memesan barang atau item secara mandiri.
 
-## Deskripsi App
+## Description App
 - Terdapat table untuk menampilkan item-item apa saja yang bisa dipesan
 - Pelanggan bisa menambahkan item dan juga jumlah per item
 - Jumlah Item dapat diupdate
@@ -12,7 +12,20 @@ Python Super Cashier adalah program sederhana self service yang menggunakan pyth
 ## FlowChart
 ![Flowchart-Tugas_Pacmaan_Python drawio(2)](https://user-images.githubusercontent.com/16360023/214219826-22bfb018-91be-451b-8f24-faeb19b453b1.png)
 
-## Instalasi Program
+## Function Code
+ | Function | Deskripsi |
+ | -------- | --------- |
+ | ```def __init__``` | Pertama kali program dijalankan dan penginputan nama |
+ | ```def opsi(self)``` | Menu awal terdiri dari checkitem, checkorder dan exit |
+ | ```def check_item(self)``` | View item dari function table dan input item  |
+ | ```def add_item(self,tambah_item)``` | Input Item dan kembali ke menu |
+ | ```def update_item_qty(self,nama_item)``` | Input atau update jumlah item dan kembali ke menu  |
+ | ```def delete_item(self,nama_item)``` | Delete item yang telah diinputkan |
+ | ```def reset_transaction(self)``` | Delete semua item yang telah diinputkan |
+ | ```def check_order(self)``` | Untuk mengecek sudah input item atau tidak. Dan opsi untuk delete item |
+ | ```def table(self)``` | Untuk menampilkan data atau item yang ada |
+ | ```def check_order(self)``` | Untuk menampilkan data atau item yang telah diinputkan oleh pelanggan  |
+## Running Program
 - Buat folder dan environment terlebih dahulu
     ```
     mkdir <folder>
